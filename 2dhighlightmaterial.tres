@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://crurjct081t2f"]
+
+[ext_resource type="Shader" path="res://2dhighlight.gdshader" id="1_h13uk"]
+
+[resource]
+shader = ExtResource("1_h13uk")
+shader_parameter/color = Color(1.27546e-05, 0.768265, 0.0841542, 1)
+shader_parameter/width = 2.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true

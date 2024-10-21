@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw3wbloqwhgi5"]
+
+[ext_resource type="PackedScene" uid="uid://t0vx1iludv1o" path="res://baseunit.tscn" id="1_hmmg5"]
+[ext_resource type="PackedScene" uid="uid://cctuffdrek751" path="res://base_building.tscn" id="2_3liiq"]
+
+[node name="GameLevel" type="Node2D"]
+
+[node name="BaseUnit" parent="." instance=ExtResource("1_hmmg5")]
+position = Vector2(128, 142)
+
+[node name="BaseUnit2" parent="." instance=ExtResource("1_hmmg5")]
+position = Vector2(327, 143)
+
+[node name="BaseBuilding" parent="." instance=ExtResource("2_3liiq")]
+position = Vector2(50, 41)
