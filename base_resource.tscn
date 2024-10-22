@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6kahabpu8six"]
+
+[ext_resource type="Script" path="res://base_resource.gd" id="1_0vbqy"]
+[ext_resource type="Texture2D" uid="uid://bnx7xvk7vmgty" path="res://sprites/medievalEnvironment_17.png" id="1_udbl2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k0j6"]
+size = Vector2(78, 75)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jebk4"]
+radius = 99.3227
+
+[node name="BaseResource" type="StaticBody2D"]
+script = ExtResource("1_0vbqy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_7k0j6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_udbl2")
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+shape = SubResource("CircleShape2D_jebk4")
