@@ -1,6 +1,6 @@
 class_name BaseResource extends StaticBody2D
 
-enum ResourceType {FOOD, WOOD, GOLD, STONE}
+enum ResourceType {NONE, FOOD, WOOD, GOLD, STONE}
 @onready var sprite : Sprite2D = $Sprite2D
 @export var resource_type : ResourceType = ResourceType.FOOD:
 	set(new_value):
@@ -16,7 +16,7 @@ func apply_resource_sprite() -> void:
 			sprite.texture = preload("res://sprites/medievalEnvironment_03.png")
 		elif resource_type == ResourceType.GOLD:
 			sprite.texture = preload("res://sprites/medievalEnvironment_18.png")
-		else:
+		elif resource_type == ResourceType.STONE:
 			sprite.texture = preload("res://sprites/medievalEnvironment_17.png")
 
 # Called when the node enters the scene tree for the first time.

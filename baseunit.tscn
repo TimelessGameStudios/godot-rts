@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://t0vx1iludv1o"]
+[gd_scene load_steps=5 format=3 uid="uid://t0vx1iludv1o"]
 
 [ext_resource type="Texture2D" uid="uid://c08xk0v7cqxg" path="res://sprites/medievalUnit_13.png" id="1_d8rip"]
 [ext_resource type="Script" path="res://baseunit.gd" id="2_rybk1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4888g"]
 size = Vector2(30, 53)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dl57s"]
+radius = 38.0132
 
 [node name="BaseUnit" type="CharacterBody2D"]
 input_pickable = true
@@ -16,3 +19,10 @@ texture = ExtResource("1_d8rip")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_4888g")
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+shape = SubResource("CircleShape2D_dl57s")
+
+[connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]

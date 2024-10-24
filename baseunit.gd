@@ -1,7 +1,8 @@
-extends BaseSelectable
+class_name BaseUnit extends BaseSelectable
 
-@export var speed : float = 32.0
+@export var speed : float = 64.0
 @onready var target : Vector2 = Vector2(position)
+@onready var interactArea : Area2D = $InteractArea
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,3 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if mouseEvent.button_index == MOUSE_BUTTON_RIGHT:
 			if selected:
 				target = event.global_position
+
+
+func _on_interact_area_body_entered(body: Node2D) -> void:
+	pass
