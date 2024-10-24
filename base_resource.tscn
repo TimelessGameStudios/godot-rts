@@ -10,6 +10,7 @@ size = Vector2(78, 75)
 radius = 99.3227
 
 [node name="BaseResource" type="StaticBody2D"]
+input_pickable = true
 script = ExtResource("1_0vbqy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -23,3 +24,5 @@ texture = ExtResource("1_udbl2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
 shape = SubResource("CircleShape2D_jebk4")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

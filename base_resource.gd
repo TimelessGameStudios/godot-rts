@@ -27,3 +27,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		var mouseEvent : InputEventMouseButton = event
+		if mouseEvent.is_pressed() and mouseEvent.button_index == MOUSE_BUTTON_RIGHT:
+			SignalBus.resource_clicked.emit(self, resource_type)
