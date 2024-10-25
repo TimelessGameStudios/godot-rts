@@ -7,6 +7,8 @@ func get_nearest_dropoff(_pos : Vector2, _type : BaseResource.ResourceType) -> B
 	var lowest_distance = INF
 	var closest_dropoff : BaseBuilding
 	for building in buildings:
+		if not building.dropoff_types.has(_type):
+			continue
 		var distance = building.global_position.distance_squared_to(_pos)
 		if distance < lowest_distance:
 			closest_dropoff = building

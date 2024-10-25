@@ -8,6 +8,7 @@
 
 [node name="BaseBuilding" parent="." instance=ExtResource("2_3liiq")]
 position = Vector2(50, 41)
+dropoff_types = Array[int]([1])
 
 [node name="BaseResource" parent="." instance=ExtResource("3_p3i84")]
 position = Vector2(552, 247)
@@ -24,3 +25,7 @@ position = Vector2(179, 209)
 [node name="BaseResource2" parent="." instance=ExtResource("3_p3i84")]
 position = Vector2(245, 411)
 resource_type = 3
+
+[node name="BaseBuilding2" parent="." instance=ExtResource("2_3liiq")]
+position = Vector2(742, 472)
+dropoff_types = Array[int]([3, 1])

@@ -1,5 +1,6 @@
 class_name BaseBuilding extends BaseSelectable
 
+@export var dropoff_types : Array[BaseResource.ResourceType]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
