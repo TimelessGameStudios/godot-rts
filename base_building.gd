@@ -5,8 +5,12 @@ class_name BaseBuilding extends BaseSelectable
 func _ready() -> void:
 	super()
 	sprite = $Sprite2D
-	pass # Replace with function body.
 
+func _enter_tree() -> void:
+	StateController.buildings.push_front(self)
+	
+func _exit_tree() -> void:
+	StateController.buildings.erase(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -8,8 +8,12 @@ class_name BaseUnit extends BaseSelectable
 func _ready() -> void:
 	super()
 	sprite = $Sprite2D
-	pass # Replace with function body.
 
+func _enter_tree() -> void:
+	StateController.units.push_front(self)
+	
+func _exit_tree() -> void:
+	StateController.units.erase(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

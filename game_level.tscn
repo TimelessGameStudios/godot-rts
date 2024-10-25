@@ -14,3 +14,13 @@ position = Vector2(552, 247)
 
 [node name="BaseUnit" parent="." instance=ExtResource("3_i08k4")]
 position = Vector2(171, 137)
+
+[node name="BaseUnit2" parent="." instance=ExtResource("3_i08k4")]
+position = Vector2(249, 164)
+
+[node name="BaseUnit3" parent="." instance=ExtResource("3_i08k4")]
+position = Vector2(179, 209)
+
+[node name="BaseResource2" parent="." instance=ExtResource("3_p3i84")]
+position = Vector2(245, 411)
+resource_type = 3

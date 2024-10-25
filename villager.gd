@@ -17,14 +17,15 @@ func _on_interact_area_body_entered(body: Node2D) -> void:
 			if carrying == BaseResource.ResourceType.NONE:
 				carrying = resource.resource_type
 				print("Picked up %s" % [resource.resource_type])
-				# Set target to nearest return site
+				var dropoff = StateController.get_nearest_dropoff(global_position, carrying)
+				if dropoff != null:
+					target = dropoff.global_position
 	elif body is BaseBuilding:
 		var building : BaseBuilding = body as BaseBuilding
 		if carrying != BaseResource.ResourceType.NONE:
 			print("Dropped off %s" % [carrying])
 			carrying = BaseResource.ResourceType.NONE
 			target = job_site.global_position
-			# Set target back to job site.
 
 func _on_resource_clicked(object, resource_type) -> void:
 	if selected:
